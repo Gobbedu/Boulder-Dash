@@ -96,6 +96,7 @@ void enemy_update(void);
 void firefly_update(void);
 void grid_draw(void );
 
+
 /* ================== STATES STUFF ================== */
 struct GAME_STATES{
     int on_pause;
