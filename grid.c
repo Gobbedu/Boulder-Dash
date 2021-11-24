@@ -134,7 +134,7 @@ void grid_draw(void)
             switch (GAME_BOARD.grid[x][y].type)
             {
             case DIRT:
-                al_draw_tinted_bitmap(sprites.dirt, al_map_rgba_f(255, 255, 255, 0.6), j, i, 0);
+                al_draw_tinted_bitmap(sprites.dirt, al_map_rgba(255, 255, 255, 0.6), j, i, 0);
                 break;
             case BOULDER: 
                 al_draw_tinted_scaled_bitmap(sprites.boulder, al_map_rgb(233, 216, 166), 0, 0, 136, 128, j, i, SPRITE_W, SPRITE_H, 0);
@@ -352,7 +352,6 @@ void pick_level(int lv)
     
     if(lv > GAME_BOARD.last_lv)
     {
-        printf("play win song\n");
         al_play_sample(sounds.sample_cheers, 0.75, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
         al_play_sample(sounds.sample_win, 0.75, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
 

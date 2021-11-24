@@ -102,7 +102,7 @@ void high_scores_draw(void)
 
 void pause_draw(void)
 {
-    al_draw_filled_rectangle(0, 0, BUFFER_W, BUFFER_H, al_map_rgba_f(0, 0, 0, 0.8));
+    al_draw_filled_rectangle(0, 0, BUFFER_W, BUFFER_H, al_map_rgba(0, 0, 0, 0.8));
 
     al_draw_text(
         font_pause,
