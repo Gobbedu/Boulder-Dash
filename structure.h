@@ -1,3 +1,9 @@
+/* =======================================================  */
+/*   Feito por Eduardo Gobbo Willi Vasconcellos Goncalves   */
+/*   GRR20203892                                            */
+/*   programa BOULDER DASH                                  */
+/*  ======================================================= */
+
 #ifndef __STRUCTURES__
 #define __STRUCTURES__
 
@@ -12,9 +18,6 @@
 #include <allegro5/allegro_primitives.h>
 
 
-ALLEGRO_DISPLAY* disp;
-ALLEGRO_BITMAP* buffer;
-
 // =============== DISPLAY STUFF ===============
 #define DISP_BLK_W 40
 #define DISP_BLK_H 23
@@ -27,6 +30,9 @@ ALLEGRO_BITMAP* buffer;
 #define DISP_SCALE 0.9
 #define DISP_W (BUFFER_W * DISP_SCALE)
 #define DISP_H (BUFFER_H * DISP_SCALE)
+
+ALLEGRO_DISPLAY* disp;
+ALLEGRO_BITMAP* buffer;
 
 void disp_init(void);
 void disp_deinit(void);
@@ -125,6 +131,7 @@ void bubble_sort(long a[], int size);
 //32x32px
 #define SPRITE_W 32
 #define SPRITE_H 32
+
 enum TILE_TYPE {
     EMPTY = 0,
     PLAYER,
@@ -143,17 +150,16 @@ struct SPRITES_T
     ALLEGRO_BITMAP* boulderSheet;
     ALLEGRO_BITMAP* gemSheet;
 
+    ALLEGRO_BITMAP* explosion[4];
+    ALLEGRO_BITMAP* player[12];
+    ALLEGRO_BITMAP* diamont[4];     
+    ALLEGRO_BITMAP* exit[2];        
+
     ALLEGRO_BITMAP* logo;
+    ALLEGRO_BITMAP* dirt;        
+    ALLEGRO_BITMAP* wall;        
     ALLEGRO_BITMAP* boulder;
     ALLEGRO_BITMAP* steelWall;  
-    
-    ALLEGRO_BITMAP* player[12];
-
-    ALLEGRO_BITMAP* wall[4];        
-    ALLEGRO_BITMAP* dirt[8];        
-    ALLEGRO_BITMAP* exit[2];        
-    ALLEGRO_BITMAP* explosion[4];
-    ALLEGRO_BITMAP* diamont[4];     
 };
 
 ALLEGRO_BITMAP* sprite_grab(char* local);
@@ -206,10 +212,8 @@ struct PLAYER_T player;
 struct SPRITES_T sprites;
 struct SOUNDS_T sounds;
 
-
-long frames;
 time_t thisSecond;
 time_t pastSecond;
-
+long frames;
 
 #endif

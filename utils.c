@@ -1,3 +1,9 @@
+/* =======================================================  */
+/*   Feito por Eduardo Gobbo Willi Vasconcellos Goncalves   */
+/*   GRR20203892                                            */
+/*   programa BOULDER DASH                                  */
+/*  ======================================================= */
+
 #include "structure.h"
 
 // ==================== SPRITES ====================
@@ -42,21 +48,7 @@ void sprites_init()
 
     sprites.logo = al_load_bitmap("./resources/sprites/logo.png");
     must_init(sprites.logo, "logo image");
-
-    sprites.explosion[0] = sprite_grab("lava0.png");
-    sprites.explosion[1] = sprite_grab("lava1.png");
-    sprites.explosion[2] = sprite_grab("lava2.png");
-    sprites.explosion[3] = sprite_grab("lava3.png");
-
-    sprites.dirt[0] = sprite_grab("pebble_brown0.png");
-    sprites.dirt[1] = sprite_grab("pebble_brown1.png");
-    sprites.dirt[2] = sprite_grab("pebble_brown2.png");
-    sprites.dirt[3] = sprite_grab("pebble_brown3.png");
-    sprites.dirt[4] = sprite_grab("pebble_brown4.png");
-    sprites.dirt[5] = sprite_grab("pebble_brown5.png");
-    sprites.dirt[6] = sprite_grab("pebble_brown7.png");
-    sprites.dirt[7] = sprite_grab("pebble_brown8.png");
-
+    
     sprites.boulderSheet = al_load_bitmap("./resources/sprites/rock.png");
     must_init(sprites.boulderSheet, "boulder sheet");
 
@@ -65,18 +57,20 @@ void sprites_init()
     sprites.gemSheet = al_load_bitmap("./resources/sprites/gems_db16.png");
     must_init(sprites.gemSheet, "gems sheet");
 
+    sprites.dirt = sprite_grab("pebble_brown0.png");
+    sprites.wall = sprite_grab("brick_brown-vines1.png");
+    sprites.steelWall = sprite_grab("mesh3.png");
+
+    sprites.explosion[0] = sprite_grab("lava0.png");
+    sprites.explosion[1] = sprite_grab("lava1.png");
+    sprites.explosion[2] = sprite_grab("lava2.png");
+    sprites.explosion[3] = sprite_grab("lava3.png");
+
     sprites.diamont[0] = al_create_sub_bitmap(sprites.gemSheet, 0, 32, 32, 32);
     sprites.diamont[1] = al_create_sub_bitmap(sprites.gemSheet, 0, 64, 32, 32);
     sprites.diamont[2] = al_create_sub_bitmap(sprites.gemSheet, 32, 32, 32, 32);
     sprites.diamont[3] = al_create_sub_bitmap(sprites.gemSheet, 32, 64, 32, 32);
     
-    sprites.wall[0] = sprite_grab("brick_brown-vines1.png");
-    sprites.wall[1] = sprite_grab("brick_brown-vines2.png");
-    sprites.wall[2] = sprite_grab("brick_brown-vines3.png");
-    sprites.wall[3] = sprite_grab("brick_brown-vines4.png");
-    
-    sprites.steelWall = sprite_grab("mesh3.png");
-
     sprites.exit[0] = sprite_grab("closed_door.png");
     sprites.exit[1] = sprite_grab("open_door.png");
 
@@ -92,6 +86,8 @@ void sprites_deinit()
 
     al_destroy_bitmap(sprites.logo);
     al_destroy_bitmap(sprites.boulder);
+    al_destroy_bitmap(sprites.dirt);
+    al_destroy_bitmap(sprites.wall);
 
     for(i = 0; i < 12; i++)
     {
@@ -100,15 +96,11 @@ void sprites_deinit()
 
     for(i = 0; i <= 3; i++){
         al_destroy_bitmap(sprites.explosion[i]);
-        al_destroy_bitmap(sprites.wall[i]);
     }
 
     al_destroy_bitmap(sprites.diamont[0]);
     al_destroy_bitmap(sprites.diamont[1]);
 
-    for(i = 0; i <= 7; i++){
-        al_destroy_bitmap(sprites.dirt[i]);
-    }
 
 
     al_destroy_bitmap(sprites.exit[0]);

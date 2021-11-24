@@ -1,3 +1,9 @@
+/* =======================================================  */
+/*   Feito por Eduardo Gobbo Willi Vasconcellos Goncalves   */
+/*   GRR20203892                                            */
+/*   programa BOULDER DASH                                  */
+/*  ======================================================= */
+
 #include "structure.h"
 // ==================== player ====================
 

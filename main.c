@@ -1,5 +1,10 @@
-#include "structure.h"
+/* =======================================================  */
+/*   Feito por Eduardo Gobbo Willi Vasconcellos Goncalves   */
+/*   GRR20203892                                            */
+/*   programa BOULDER DASH                                  */
+/*  ======================================================= */
 
+#include "structure.h"
 
 int main()
 {
@@ -15,12 +20,9 @@ int main()
 
     disp_init();
 
-    // audio_init();
-
     must_init(al_init_image_addon(), "image");
     must_init(al_init_font_addon(), "font addon");
     must_init(al_init_ttf_addon(), "ttf addon");
-
 
     sprites_init();
     hud_init();

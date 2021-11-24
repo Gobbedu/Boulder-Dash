@@ -1,3 +1,9 @@
+/* =======================================================  */
+/*   Feito por Eduardo Gobbo Willi Vasconcellos Goncalves   */
+/*   GRR20203892                                            */
+/*   programa BOULDER DASH                                  */
+/*  ======================================================= */
+
 #include "structure.h"
 
 //  ======================= GRID =======================
@@ -8,7 +14,7 @@ void grid_init(void)
     int i;
 
     GAME_BOARD.game_score = 0;
-    GAME_BOARD.lv = 4;
+    GAME_BOARD.lv = 1;
     GAME_BOARD.last_lv = 5;
     
     // // aloca um vetor de GRID_BLK_H  ponteiros para GRID_BLK_H has
@@ -128,13 +134,13 @@ void grid_draw(void)
             switch (GAME_BOARD.grid[x][y].type)
             {
             case DIRT:
-                al_draw_tinted_bitmap(sprites.dirt[0], al_map_rgba_f(255, 255, 255, 0.6), j, i, 0);
+                al_draw_tinted_bitmap(sprites.dirt, al_map_rgba_f(255, 255, 255, 0.6), j, i, 0);
                 break;
             case BOULDER: 
                 al_draw_tinted_scaled_bitmap(sprites.boulder, al_map_rgb(233, 216, 166), 0, 0, 136, 128, j, i, SPRITE_W, SPRITE_H, 0);
                 break;
             case WALL:
-                al_draw_tinted_bitmap(sprites.wall[0], al_map_rgb(238, 155, 0), j, i, 0); 
+                al_draw_tinted_bitmap(sprites.wall, al_map_rgb(238, 155, 0), j, i, 0); 
                 break;
             case DIAMOND: 
                 al_draw_scaled_bitmap(sprites.diamont[GAME_BOARD.grid[x][y].frame], 0, 0, SPRITE_H, SPRITE_W, j-6, i-6, 45, 45, 0);
