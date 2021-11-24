@@ -3,7 +3,6 @@
 /*   GRR20203892                                            */
 /*   programa BOULDER DASH                                  */
 /*  ======================================================= */
-
 #include "structure.h"
 
 //  ======================= GRID =======================
@@ -134,7 +133,7 @@ void grid_draw(void)
             switch (GAME_BOARD.grid[x][y].type)
             {
             case DIRT:
-                al_draw_tinted_bitmap(sprites.dirt, al_map_rgba(255, 255, 255, 0.6), j, i, 0);
+                al_draw_tinted_bitmap(sprites.dirt, al_map_rgba_f(255, 255, 255, 0.6), j, i, 0);
                 break;
             case BOULDER: 
                 al_draw_tinted_scaled_bitmap(sprites.boulder, al_map_rgb(233, 216, 166), 0, 0, 136, 128, j, i, SPRITE_W, SPRITE_H, 0);

@@ -4,6 +4,7 @@
 #   Makefile do programa BOULDER DASH
 #  ======================================================= 
 
+
 # compilacao de acordo com a documentacao do allegro 5
 CFLAGS = -Wall -ansi -g -std=c99 
 LDLIBS = $$(pkg-config allegro-5 allegro_font-5 allegro_ttf-5 allegro_primitives-5 allegro_audio-5 allegro_acodec-5 allegro_image-5 --libs --cflags)

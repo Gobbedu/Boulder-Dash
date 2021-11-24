@@ -17,7 +17,6 @@
 #include <allegro5/allegro_acodec.h>
 #include <allegro5/allegro_primitives.h>
 
-
 // =============== DISPLAY STUFF ===============
 #define DISP_BLK_W 40
 #define DISP_BLK_H 23
