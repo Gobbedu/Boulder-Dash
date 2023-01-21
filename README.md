@@ -16,6 +16,7 @@ This project was only tested on linux, so other operating systems may not work o
 
 ## Running
 Once you have installed allegro, simply run `make` to build the game and `make clean` to remove object files.
+
 `make purge` will remove everything that is not a source file.
 
 Now you can finally run the game with 
