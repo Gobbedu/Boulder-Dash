@@ -5,6 +5,23 @@
 /*  ======================================================= */
 #include "structure.h"
 
+extern ALLEGRO_DISPLAY* disp;
+extern ALLEGRO_BITMAP* buffer;
+
+extern ALLEGRO_FONT* font;
+extern ALLEGRO_FONT* font_pause;
+extern ALLEGRO_FONT* font_2game;
+extern ALLEGRO_FONT* font_start2help;
+
+extern unsigned char key[ALLEGRO_KEY_MAX];
+
+extern struct GAME_DATA GAME_BOARD;
+extern struct PLAYER_T player;
+extern struct SPRITES_T sprites;
+extern struct SOUNDS_T sounds;
+
+extern time_t pastSecond;
+
 // ==================== SPRITES ====================
 ALLEGRO_BITMAP* sprite_grab(char* local)
 {

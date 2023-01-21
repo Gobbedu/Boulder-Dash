@@ -5,6 +5,26 @@
 /*  ======================================================= */
 #include "structure.h"
 
+ALLEGRO_DISPLAY* disp;
+ALLEGRO_BITMAP* buffer;
+
+ALLEGRO_FONT* font;
+ALLEGRO_FONT* font_pause;
+ALLEGRO_FONT* font_2game;
+ALLEGRO_FONT* font_start2help;
+
+unsigned char key[ALLEGRO_KEY_MAX];
+
+struct GAME_DATA GAME_BOARD;
+struct GAME_STATES GAME_STATE;
+struct PLAYER_T player;
+struct SPRITES_T sprites;
+struct SOUNDS_T sounds;
+
+time_t thisSecond;
+time_t pastSecond;
+long frames;
+
 int main()
 {
     srand(time(NULL));

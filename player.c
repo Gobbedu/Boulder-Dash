@@ -5,6 +5,16 @@
 /*  ======================================================= */
 #include "structure.h"
 
+extern ALLEGRO_FONT* font;
+
+extern unsigned char key[ALLEGRO_KEY_MAX];
+
+extern struct GAME_DATA GAME_BOARD;
+extern struct GAME_STATES GAME_STATE;
+extern struct PLAYER_T player;
+extern struct SOUNDS_T sounds;
+
+
 // ==================== player ====================
 void player_init()
 {

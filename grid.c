@@ -5,6 +5,18 @@
 /*  ======================================================= */
 #include "structure.h"
 
+extern ALLEGRO_FONT* font;
+
+extern struct GAME_DATA GAME_BOARD;
+extern struct GAME_STATES GAME_STATE;
+extern struct PLAYER_T player;
+extern struct SPRITES_T sprites;
+extern struct SOUNDS_T sounds;
+
+extern time_t thisSecond;
+extern time_t pastSecond;
+extern long frames;
+
 //  ======================= GRID =======================
 void grid_init(void)
 {

@@ -5,6 +5,18 @@
 /*  ======================================================= */
 #include "structure.h"
 
+extern ALLEGRO_FONT* font;
+extern ALLEGRO_FONT* font_pause;
+extern ALLEGRO_FONT* font_2game;
+extern ALLEGRO_FONT* font_start2help;
+
+extern unsigned char key[ALLEGRO_KEY_MAX];
+
+extern struct GAME_DATA GAME_BOARD;
+extern struct GAME_STATES GAME_STATE;
+extern struct PLAYER_T player;
+extern struct SPRITES_T sprites;
+
 void states_init(void){
     GAME_STATE.on_start = 1;
     GAME_STATE.on_win = 0;

@@ -30,9 +30,6 @@
 #define DISP_W (BUFFER_W * DISP_SCALE)
 #define DISP_H (BUFFER_H * DISP_SCALE)
 
-ALLEGRO_DISPLAY* disp;
-ALLEGRO_BITMAP* buffer;
-
 void disp_init(void);
 void disp_deinit(void);
 void disp_pre_draw(void);
@@ -168,10 +165,6 @@ void sprite_direction(void);
 void load_player_sprites(char *source);
 
 //  ----------------- font -----------------
-ALLEGRO_FONT* font;
-ALLEGRO_FONT* font_pause;
-ALLEGRO_FONT* font_2game;
-ALLEGRO_FONT* font_start2help;
 
 void hud_init();
 void hud_deinit();
@@ -181,7 +174,6 @@ void hud_draw();
 // ----- keyboard ------
 #define KEY_SEEN     1
 #define KEY_RELEASED 2
-unsigned char key[ALLEGRO_KEY_MAX];
 
 // ---------- audio -------------
 void audio_init(void);
@@ -203,16 +195,5 @@ void keyboard_update(ALLEGRO_EVENT* event);
 void must_init(bool test, const char* msg);
 void pick_level(int lv);
 
-
-// ===================== GLOBAL VARIABLES =====================
-struct GAME_DATA GAME_BOARD;
-struct GAME_STATES GAME_STATE;
-struct PLAYER_T player;
-struct SPRITES_T sprites;
-struct SOUNDS_T sounds;
-
-time_t thisSecond;
-time_t pastSecond;
-long frames;
 
 #endif

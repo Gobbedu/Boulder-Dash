@@ -8,19 +8,16 @@
 # compilacao de acordo com a documentacao do allegro 5
 CFLAGS = -Wall -ansi -g -std=c99 
 LDLIBS = $$(pkg-config allegro-5 allegro_font-5 allegro_ttf-5 allegro_primitives-5 allegro_audio-5 allegro_acodec-5 allegro_image-5 --libs --cflags)
-# nome do arquivo compilado
-NAME = boulder
 
 
-# codigo
+objects = main.o utils.o player.o grid.o states.o
 CODED = main.c utils.c player.c grid.c states.c
 HEADERS = structure.h 
-#objetos gerados
-objects = main.o utils.o player.o grid.o states.o
+NAME = boulder # nome arquivo compilado
 
-
-# REGRAS DE COMPILACAO
+# regra default (primeira regra)
 all: main
+
 
 main: $(objects) 
 	gcc -o $(NAME) $(objects) $(LDLIBS)
@@ -28,8 +25,11 @@ main: $(objects)
 main.o: $(CODED)
 	gcc $(CFLAGS) -c $(CODED) 
 
-clean:
-	rm $(objects) 
 
+# remove arquivos temporários
+clean:
+	@-rm -f $(objs) *~ *.o
+ 
+# remove tudo o que não for o código-fonte
 purge: clean
-	rm $(NAME)
+	@-rm -f $(NAME)
